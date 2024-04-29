@@ -32,7 +32,7 @@ class WeatherApp:
         city_name = self.city_entry.get()
 
         # api key 
-        api_key = "7a2e90657fb7f49c0165d9565df9efac"
+        api_key = "Redacted"
 
         # base url 
         base_url = "https://api.openweathermap.org/data/2.5/weather?"
