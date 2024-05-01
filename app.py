@@ -1,8 +1,15 @@
 import requests
+from dotenv import load_dotenv
 import tkinter as tk
 from tkinter import messagebox
+import os  
 
+# Needed for .env (access to API/ API URL)
+load_dotenv()
+
+# STEP1 Create class for out add
 class WeatherApp:
+    # init will create the GUI 
     def __init__(self, root):
         self.root = root
         self.root.title("Weather App") # name of the app
@@ -27,15 +34,21 @@ class WeatherApp:
         self.result_label = tk.Label(self.root, text="", font=("Helvetica", 12))
         self.result_label.pack()
     
+    # STEP 2 Create API connection and run a response check
     def get_weather(self):
+
         # Get city name from entry widget
         city_name = self.city_entry.get()
 
         # api key 
+<<<<<<< HEAD
         api_key = "Redacted"
+=======
+        api_key = os.getenv('API_KEY')
+>>>>>>> aa6fab6 (add gitignore and updated API key)
 
         # base url 
-        base_url = "https://api.openweathermap.org/data/2.5/weather?"
+        base_url = os.getenv('API_URL')
 
         # complete URL
         complete_url = base_url + 'q=' + city_name + '&units=metric&appid=' + api_key
