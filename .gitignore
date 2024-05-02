@@ -1,1 +1,2 @@
-config.env
+# this will hide the .env file
+.env
